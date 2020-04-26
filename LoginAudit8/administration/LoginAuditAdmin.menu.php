@@ -1,5 +1,4 @@
 <?php
-/*
 global $theme;
 
 if($theme){
@@ -8,7 +7,7 @@ if($theme){
 } else {
 	$image_path = 'themes/default/images/';
 }
-*/
+
 $admin_option_defs = array();
 $admin_option_defs['Administration']['LoginAudit'] = array(
 	'icon_Opacus',   //Icon name. Available icons are located in ./themes/default/images 
@@ -25,4 +24,5 @@ $admin_group_header[]= array(
 	'LBL_LOGINAUDIT_GROUP_DESCRIPTION', //Section description label
 );
 
+*/
 ?>

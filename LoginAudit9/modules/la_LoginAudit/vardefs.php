@@ -13,9 +13,9 @@
 
 $dictionary['la_LoginAudit'] = array(
     'table' => 'la_loginaudit',
-    'audited' => true,
+    'audited' => false,
     'activity_enabled' => false,
-    'duplicate_merge' => true,
+    'duplicate_merge' => false,
     'fields' => array (
   'ip_address' => 
   array (
@@ -101,8 +101,8 @@ $dictionary['la_LoginAudit'] = array(
     'relationships' => array (
 ),
     'optimistic_locking' => true,
-    'unified_search' => true,
-    'full_text_search' => true,
+    'unified_search' => false,
+    'full_text_search' => false,
 );
 
 if (!class_exists('VardefManager')){

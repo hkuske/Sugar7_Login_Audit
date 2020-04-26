@@ -13,6 +13,7 @@
 $manifest = array (
   'acceptable_sugar_versions' => 
   array (
+    '8.*.*',
     '9.*.*',
 	'10.*.*',
   ),
@@ -28,19 +29,18 @@ $manifest = array (
   'description' => '',
   'icon' => '',
   'is_uninstallable' => true,
-  'name' => 'LoginAudit',
-  'published_date' => '2020-04-13 15:33:25',
+  'name' => 'LoginAudit9',
+  'published_date' => '2020-04-20 04:00:00',
   'type' => 'module',
-  'version' => 1586792005,
+  'version' => 2020042004,
   'remove_tables' => 'prompt',
 );
 
 
 $installdefs = array (
-  'id' => 'LoginAudit',
+  'id' => 'LoginAudit9',
   'beans' => 
   array (
-    0 => 
     array (
       'module' => 'la_LoginAudit',
       'class' => 'la_LoginAudit',
@@ -48,71 +48,52 @@ $installdefs = array (
       'tab' => false,
     ),
   ),
-  'layoutdefs' => 
-  array (
-  ),
-  'relationships' => 
-  array (
-  ),
   'copy' => 
   array (
-    0 => 
     array (
-      'from' => '<basepath>/SugarModules/modules/la_LoginAudit',
-      'to' => 'modules/la_LoginAudit',
+      'from' => '<basepath>/modules/la_LoginAudit/',
+      'to' =>              'modules/la_LoginAudit/',
     ),
+    array (
+      'from' => '<basepath>/custom/Extension/modules/Users/Ext/LogicHooks/LoginAudit9_logic_hooks.php',
+      'to' =>              'custom/Extension/modules/Users/Ext/LogicHooks/LoginAudit9_logic_hooks.php',
+    ),
+/*	
+    array (
+      'from' => '<basepath>/custom/Extension/modules/Administration/Ext/Administration/LoginAudit.menu.php',
+      'to' =>              'custom/Extension/modules/Administration/Ext/Administration/LoginAudit.menu.php',
+    ),
+*/	
   ),
   'language' => 
   array (
-    0 => 
     array (
-      'from' => '<basepath>/SugarModules/language/application/en_us.lang.php',
+      'from' => '<basepath>/custom/Extension/application/Ext/Language/en_us.lang.php',
       'to_module' => 'application',
       'language' => 'en_us',
     ),
-    1 => 
     array (
-	'from'=> '<basepath>/SugarModules/language/administration/en_us.LoginAuditAdmin.php',
+      'from' => '<basepath>/custom/Extension/application/Ext/Language/de_DE.lang.php',
+      'to_module' => 'application',
+      'language' => 'de_DE',
+    ),
+    array (
+	'from'=> '<basepath>/custom/Extension/modules/Administration/Ext/Language/en_us.LoginAudit9.php',
 	'to_module'=> 'Administration',
 	'language'=>'en_us',
     ),
+    array (
+	'from'=> '<basepath>/custom/Extension/modules/Administration/Ext/Language/de_DE.LoginAudit9.php',
+	'to_module'=> 'Administration',
+	'language'=>'de_DE',
+    ),
   ),
-  'image_dir' => '<basepath>/icons',
+  
   'administration' => 
   array (
-    0 => 
-    array (
-      'from' => '<basepath>/SugarModules/administration/LoginAuditAdmin.menu.php',
+     array (
+      'from' => '<basepath>/custom/Extension/modules/Administration/Ext/Administration/LoginAudit.menu.php',
     ),
-  ),		 
-  'logic_hooks' => array(
-     array(
-        'module'         => 'Users',
-        'hook'           => 'login_failed',
-        'order'          => 100,
-        'description'    => 'Check Login status',
-        'file'           => 'modules/la_LoginAudit/hook_functions.php',
-        'class'          => 'loginActions',
-        'function'       => 'updateLoginAudit',
-     ),
-     array(
-        'module'         => 'Users',
-        'hook'           => 'after_login',
-        'order'          => 100,
-        'description'    => 'Check Login status',
-        'file'           => 'modules/la_LoginAudit/hook_functions.php',
-        'class'          => 'loginActions',
-        'function'       => 'updateLoginAudit',
-     ),
-     array(
-        'module'         => 'Users',
-        'hook'           => 'before_logout',
-        'order'          => 100,
-        'description'    => 'Check Login status',
-        'file'           => 'modules/la_LoginAudit/hook_functions.php',
-        'class'          => 'loginActions',
-        'function'       => 'updateLoginAudit',
-     ),
-   ), 
-
+  ),	
+ 
 );
